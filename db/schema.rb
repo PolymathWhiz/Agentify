@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712200718) do
+ActiveRecord::Schema.define(version: 20170712211333) do
 
   create_table "businesses", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "business_name"
     t.string   "phno"
     t.string   "state"
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20170712200718) do
     t.string   "business_website"
     t.string   "requester_name"
     t.string   "requester_email"
-    t.boolean  "admin"
-    t.boolean  "activated"
+    t.boolean  "admin",                  default: false
+    t.boolean  "activated",              default: false
     t.string   "agency_type"
-    t.text     "about"
+    t.text     "about",                  default: "",    null: false
     t.index ["activated"], name: "index_businesses_on_activated"
     t.index ["admin"], name: "index_businesses_on_admin"
     t.index ["city"], name: "index_businesses_on_city"

@@ -3,7 +3,7 @@
   <head>
     <title><%= full_title(yield :title) %></title>
     <%= csrf_meta_tags %>
-		
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Have access to all agents in Nigeria">
@@ -12,15 +12,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
-		
+
 		<%= yield %>
-		
+
 		<%= render 'shared/footer' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval' => false %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
   </body>
 </html>
