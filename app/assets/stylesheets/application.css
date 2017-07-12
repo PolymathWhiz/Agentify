@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Open Sans", "Roboto", BlinkMacSystemFont, -apple-system, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*    font-weight: 400;*/
+}

@@ -5,8 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# Search
+gem 'searchkick'
+
+# Authentication
+gem 'devise'
+
+# Pagination
+gem 'kaminari'
+
+# Sweeter Alerts
+gem 'sweetalert2'
+
+# Generating fake data
+gem 'faker', '1.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
