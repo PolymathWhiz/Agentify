@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712192204) do
+ActiveRecord::Schema.define(version: 20170712200718) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -25,8 +25,24 @@ ActiveRecord::Schema.define(version: 20170712192204) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "business_name"
+    t.string   "phno"
+    t.string   "state"
+    t.string   "city"
+    t.text     "address"
+    t.string   "business_website"
+    t.string   "requester_name"
+    t.string   "requester_email"
+    t.boolean  "admin"
+    t.boolean  "activated"
+    t.string   "agency_type"
+    t.text     "about"
+    t.index ["activated"], name: "index_businesses_on_activated"
+    t.index ["admin"], name: "index_businesses_on_admin"
+    t.index ["city"], name: "index_businesses_on_city"
     t.index ["email"], name: "index_businesses_on_email", unique: true
     t.index ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true
+    t.index ["state"], name: "index_businesses_on_state"
   end
 
 end
