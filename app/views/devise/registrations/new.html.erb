@@ -53,7 +53,17 @@
 
             <div class="form-group">
               <%= f.label :business_website %><br />
-              <%= f.email_field :business_website, autofocus: false, class: 'form-control' %>
+              <%= f.text_field :business_website, autofocus: false, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :requester_name %><br />
+              <%= f.text_field :requester_name, autofocus: false, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :requester_email %><br />
+              <%= f.text_field :requester_email, autofocus: false, class: 'form-control' %>
             </div>
 
               <div class="form-group">
