@@ -15,18 +15,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-            <a class="navbar-brand" href="#">Agentify</a>
+            <a class="navbar-brand" href="<%= root_path %>">Agentify</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register as an Agent</a>
-                    </li>
+                    <% if !business_signed_in? %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= new_business_session_path %>">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary" href="<%= new_business_registration_path %>">Add your business</a>
+                        </li>
+                    <% else %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= current_business %>">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= edit_business_registration_path %>">Edit Profile</a>
+                        </li>
+                    <% end %>
                 </ul>
             </div>
         </div>

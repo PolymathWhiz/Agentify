@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get '/terms', to: 'pages#terms'
   
   devise_for :businesses
+
+  devise_scope :businesses do
+    resources :businesses, only: [:show, :update]
+  end
 end

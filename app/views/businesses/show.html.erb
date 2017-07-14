@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card w-100">
+        <div class="card-block">
+          <h3 class="card-title"><%= @business.business_name %></h3>
+          <p class="card-text">
+            <p>
+              <a href="<%= @business.business_website unless @business.business_website.present?%>"> <i class="fa fa-external-link fa-fw"></i> Visit Website</a> <span class="vert-divider">|</span>
+              
+              <a href="mailto:<%= @business.email %>"> <i class="fa fa-envelope fa-fw"></i> Email Business</a> <span class="vert-divider">|</span>
+
+              <a href="mailto:<%= @business.phno %>"> <i class="fa fa-phone fa-fw"></i> Call Business</a>
+            </p>
+            
+            <p>
+              <i class="fa fa-map-marker fa-fw" style="color: black;" aria-hidden="true"></i>
+              <%= business_address(@business) %> 
+            </p>
+          </p>
+
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

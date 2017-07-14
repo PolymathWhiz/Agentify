@@ -1,1 +1,42 @@
-// Little custom ish coming up here 
+/* Error message */
+
+.field_with_errors .help-block,
+.field_with_errors .control-label,
+.field_with_errors .radio,
+.field_with_errors .checkbox,
+.field_with_errors .radio-inline,
+.field_with_errors .checkbox-inline,
+.field_with_errors.radio label,
+.field_with_errors.checkbox label,
+.field_with_errors.radio-inline label,
+.field_with_errors.checkbox-inline label {
+    color: #a94442;
+}
+
+.field_with_errors .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    color: #d9534f;
+}
+
+.field_with_errors .form-control:focus {
+    border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+
+.field_with_errors .input-group-addon {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #a94442;
+}
+
+.field_with_errors .form-control-feedback {
+    color: #a94442;
+}
+
+#error_explanation ul {
+    color: red;
+    margin: 0 0 30px 0;
+}
