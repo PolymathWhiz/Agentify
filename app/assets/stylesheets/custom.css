@@ -40,3 +40,10 @@
     color: red;
     margin: 0 0 30px 0;
 }
+
+a:hover {
+    text-decoration: none !important;
+}
+
+
+/* */
