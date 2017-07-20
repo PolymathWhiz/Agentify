@@ -4,18 +4,18 @@
 
     <div class="jumbotron main-jumb">
         <div class="container">
-            <h1 class="display-4 text-center">Find agents all over Nigeria.</h1>
+            <h1 class="display-4 text-center m-t-30">Find agents all over Nigeria.</h1>
              <hr class="my-4">
 
              <%= form_tag(search_index_path, :method => "get") do %>
-             <div class="row">
+             <div class="row m-t-50">
              <div class="offset-md-1"></div>
-                <div class="col-md-2" style="margin-right: -10px;">
+                <div class="col-md-2 m-r--10">
                      <div class="form-group">
                         <%= select_tag :agency_type, options_for_select(agency_type), class: "form-control form-control-lg" %>
                     </div>
                 </div>
-                <div class="col-md-6" style="margin-right: -10px;">
+                <div class="col-md-6 m-r--10">
                     <div class="form-group">
                         <%= text_field_tag :search, params[:search], class: "form-control form-control-lg", placeholder: "Search by agent name or location", maxlength: 30 %>
                      </div>
@@ -79,7 +79,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Hostel Agents</h2>
-                    <p class="lead">Get access to agents to help you secure hostels for schools in Nigeria.</p>
+                    <p class="lead">Get access to verified agents to help you secure hostels for schools in Nigeria.</p>
                 </div>
                 <div class="col-lg-5 offset-lg-2">
                     <%= image_tag 'bed.jpg', class: 'img-fluid', alt: '' %>
@@ -103,13 +103,13 @@
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://www.twiiter.com/" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            <a href="https://www.facebook.com/" class="btn btn-secondary btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://www.instagram.com/" class="btn btn-secondary btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                         </li>
                     </ul>
                 </div>

@@ -57,3 +57,15 @@ a:hover {
 .white {
     color: #fff;
 }
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.m-t-50 {
+    margin-top: 50px;
+}
+
+.m-r--10 {
+    margin-right: -10px;
+}

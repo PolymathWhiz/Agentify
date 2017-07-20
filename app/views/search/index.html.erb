@@ -1,2 +1,57 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<div class="container m-t-50" >
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active"> <%= params[:search] %></li>
+      </ol>
+    </div>
+  </div>
+
+    <%= form_tag(search_index_path, :method => "get") do %>
+      <div class="row">
+          <div class="col-md-3 m-r--10">
+            <div class="form-group">
+              <%= select_tag :agency_type, options_for_select(agency_type), class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-6 m-r--10">
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search by agent name or location", maxlength: 30 %>
+            </div>
+          </div>
+            <div class="col-md-3">
+              <%= submit_tag "Find Agents", name: nil, class: "btn btn-outline-primary btn-block" %>
+            </div>
+        </div>
+    <% end %>
+
+  <% if !@search.blank? || @total > 0%>
+    <p class="m-t-14">
+      About <%= pluralize(number_with_delimiter(@total),"result")%> were found for the term:
+      <span class="text-danger"> <%= @term %></span>
+    </p>
+
+  <div class="row" style="margin-bottom: 40px;">
+    <div class="col-md-8">
+      <% @search.each do |f| %>
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"> <%= f.business_name %></h4>
+            <h6 class="card-subtitle mb-2 text-muted"> <%= f.agency_type %></h6>
+            <p class="card-text"> <%= f.about %> </p>
+            <p class="card-text"> 
+              <i class="fa fa-map-marker fa-fw" style="color: black;" aria-hidden="true"></i>
+              <%= f.full_address %>
+            </p>
+            <a href="<%= business_path(f) %>" class="card-link btn btn-success">View more</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% else %>
+    <h4 class="text-center text-danger m-t-100 m-b-100">No results found for the term "<%= @term %>"</h4>
+  <% end %>
+  <%= paginate @search %>
+</div>
