@@ -18,15 +18,13 @@
             <a class="navbar-brand" href="<%= root_path %>">Agentify</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
                     <% if !business_signed_in? %>
                         <li class="nav-item">
                             <a class="nav-link" href="<%= new_business_session_path %>">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-primary" href="<%= new_business_registration_path %>">Add your business</a>
+                            <a class="nav-link btn btn-primary" href="<%= new_business_registration_path %>">
+                            <span class="white">Add your business</span></a>
                         </li>
                     <% else %>
                         <li class="nav-item">

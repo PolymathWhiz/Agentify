@@ -1,3 +1,5 @@
+<% provide(:title, "#{@business.business_name}") %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -18,10 +20,26 @@
               <%= business_address(@business) %> 
             </p>
           </p>
-
-          <a href="#" class="btn btn-primary">Button</a>
         </div>
       </div>
     </div>
   </div>
+
+  <% if @business.about.present? %>
+    
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card w-100">
+        <div class="card-block">
+          <h3 class="card-title">About <%= @business.business_name %></h3>
+          <p class="card-text">
+            <%= @business.about %>   
+          </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  
 </div>

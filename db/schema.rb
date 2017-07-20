@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712211333) do
+ActiveRecord::Schema.define(version: 20170714193623) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170712211333) do
     t.boolean  "activated",              default: false
     t.string   "agency_type"
     t.text     "about",                  default: "",    null: false
+    t.string   "avatar"
     t.index ["activated"], name: "index_businesses_on_activated"
     t.index ["admin"], name: "index_businesses_on_admin"
     t.index ["city"], name: "index_businesses_on_city"

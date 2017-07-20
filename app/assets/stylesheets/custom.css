@@ -44,3 +44,16 @@
 a:hover {
     text-decoration: none !important;
 }
+
+
+/*
+    Home 
+*/
+
+.main-jumb {
+    background: linear-gradient(-90deg, #f8f8f8, #028dc1);
+}
+
+.white {
+    color: #fff;
+}

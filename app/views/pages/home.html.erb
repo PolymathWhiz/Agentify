@@ -2,41 +2,45 @@
 
 <%= render 'shared/devise_flash' %>
 
- <!-- Header -->
-    <header class="intro-header">
+    <div class="jumbotron main-jumb">
         <div class="container">
-            <div class="intro-message">
-                <h1>Landing Page</h1>
-                <!-- <h3>A Template by Start Bootstrap</h3> -->
-                <hr class="intro-divider">
-                <!-- <ul class="list-inline intro-social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                    </li>
-                </ul> -->
-            </div>
-        </div>
-    </header>
+            <h1 class="display-4 text-center">Find agents all over Nigeria.</h1>
+             <hr class="my-4">
+
+             <%= form_tag(search_index_path, :method => "get") do %>
+             <div class="row">
+             <div class="offset-md-1"></div>
+                <div class="col-md-2" style="margin-right: -10px;">
+                     <div class="form-group">
+                        <%= select_tag :agency_type, options_for_select(agency_type), class: "form-control form-control-lg" %>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-right: -10px;">
+                    <div class="form-group">
+                        <%= text_field_tag :search, params[:search], class: "form-control form-control-lg", placeholder: "Search by agent name or location", maxlength: 30 %>
+                     </div>
+                </div>
+                <div class="col-md-3">
+                    <%= submit_tag "Find Agents", name: nil, class: "btn btn-outline-primary btn-block btn-lg" %>
+                 </div>
+             </div>
+            <% end %>
+        </div>    
+    </div>
 
     <!-- Page Content -->
-    <section class="content-section-a">
+    <section class="content-section-a" style="margin-top: -40px !important;">
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">Travel Agents:<br>School and Vacation</h2>
+                    <p class="lead">Have access to verified travelling agents to help you when planning your next vacation or school admission procedures.</p>
                 </div>
                 <div class="col-lg-5 offset-lg-2">
-                  <%= image_tag 'ipad.png', class: 'img-fluid', alt: '' %>
+                  <%= image_tag 'school.jpeg', class: 'img-fluid', alt: 'school image' %>
                 </div>
             </div>
 
@@ -52,11 +56,11 @@
                 <div class="col-lg-5 push-lg-7">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">Real Estate Agents</h2>
+                    <p class="lead">Have access to all verified Real Estate Agents in Nigeria to help you in buying or renting your next property.</p>
                 </div>
                 <div class="col-lg-5 pull-lg-5">
-                    <%= image_tag 'dog.png', class: 'img-fluid', alt: '' %>
+                    <%= image_tag 'land.jpeg', class: 'img-fluid', alt: 'land image' %>
                 </div>
             </div>
 
@@ -74,11 +78,11 @@
                 <div class="col-lg-5">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Hostel Agents</h2>
+                    <p class="lead">Get access to agents to help you secure hostels for schools in Nigeria.</p>
                 </div>
                 <div class="col-lg-5 offset-lg-2">
-                    <%= image_tag 'phones.png', class: 'img-fluid', alt: '' %>
+                    <%= image_tag 'bed.jpg', class: 'img-fluid', alt: '' %>
                 </div>
             </div>
 
