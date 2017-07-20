@@ -1,5 +1,5 @@
 class Business < ApplicationRecord
-  EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,6 +9,8 @@ class Business < ApplicationRecord
                          :requester_name, :requester_email, :agency_type
 
   default_scope -> { order(business_name: :asc) }
+  
+  EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # TODO Validate the various formats of inputs
   validates :business_name, uniqueness: {case_sensitive: false}
@@ -16,6 +18,9 @@ class Business < ApplicationRecord
   validates :requester_email, format: { with: EMAIL_REGEX}
 
   searchkick word_middle: [:search_data]
+
+  extend FriendlyId
+  friendly_id :business_name, use: :slugged
 
 
   # mount_uploader :avatar, AvatarUploader # Carrierwave
@@ -33,6 +38,10 @@ class Business < ApplicationRecord
 
   def full_address
     "#{address}, #{city}, #{state}."
+  end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || business_name_changed?
   end
 
   private 

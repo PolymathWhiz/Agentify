@@ -1,5 +1,6 @@
 class BusinessesController < ApplicationController
   before_action :set_business, only: :show
+  before_action :check_status, only: :show
 
   def show
   end
@@ -7,9 +8,11 @@ class BusinessesController < ApplicationController
   private
   
   def set_business
-    @business = Business.find(params[:id])
+    @business = Business.friendly.find(params[:id])
   end
-  
-  def business_params
+
+  def check_status
+    @business ||= Business.friendly.find(params[:id])
+    render_404 unless @business.activated?
   end
 end

@@ -11,7 +11,6 @@ class SearchController < ApplicationController
        @search = Business.search(search, fields: [:business_name, :city, :state], misspellings: false)
     end
     @total = @search.total_count
-    @time = @search.took
     @search = Kaminari.paginate_array(@search).page(params[:page]).per(12) # Paginates the results
   end
 end

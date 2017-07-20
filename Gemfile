@@ -23,9 +23,6 @@ gem 'faker', '1.6.6'
 # Cool Urls
 gem 'friendly_id'
 
-# Client-side validations
-gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
-
 # Image upload
 # gem 'carrierwave', '~> 1.0'
 # gem 'cloudinary'
