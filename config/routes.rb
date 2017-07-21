@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # Admin section
   namespace :admin do
-
+    root 'home#index'
+    resources :businesses, only: [:index, :destroy]
   end
 end
