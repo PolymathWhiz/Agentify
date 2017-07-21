@@ -8,9 +8,9 @@ class SearchController < ApplicationController
     if search.present? && agency.present?
         @search = Business.search(search, fields: [:business_name, :city, :state], misspellings: false, where: { agency_type: where[:agency_type] } )
     else
-       @search = Business.search(search, fields: [:business_name, :city, :state], misspellings: false)
+       @search = Business.search("*", fields: [:business_name, :city, :state], misspellings: false, where: { agency_type: where[:agency_type] })
     end
     @total = @search.total_count
-    @search = Kaminari.paginate_array(@search).page(params[:page]).per(12) # Paginates the results
+    @search = Kaminari.paginate_array(@search).page(params[:page]).per(4) # Paginates the results
   end
 end
