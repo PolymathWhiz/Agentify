@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   devise_scope :businesses do
     resources :businesses, only: [:show, :update]
   end
+
+  # Admin section
+  namespace :admin do
+
+  end
 end

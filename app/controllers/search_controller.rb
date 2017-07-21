@@ -5,12 +5,16 @@ class SearchController < ApplicationController
     agency = params[:agency_type]
     where = {}
     where[:agency_type] = agency unless !agency.present?
+    where[:activated] = params[:activated]
     if search.present? && agency.present?
-        @search = Business.search(search, fields: [:business_name, :city, :state], misspellings: false, where: { agency_type: where[:agency_type] } )
+        @search = Business.search(search, order: [{business_name: {order: :asc }}],
+                                          fields: [:business_name, :city, :state], misspellings: false, 
+                                          where: {activated: true, agency_type: where[:agency_type] } )
     else
-       @search = Business.search("*", fields: [:business_name, :city, :state], misspellings: false, where: { agency_type: where[:agency_type] })
+       @search = Business.search("*", order: [{business_name: {order: :asc }}], 
+                                      fields: [:business_name, :city, :state], misspellings: false, where: { agency_type: where[:agency_type], activated: true })
     end
     @total = @search.total_count
-    @search = Kaminari.paginate_array(@search).page(params[:page]).per(4) # Paginates the results
+    @search = Kaminari.paginate_array(@search).page(params[:page]).per(10)
   end
 end
