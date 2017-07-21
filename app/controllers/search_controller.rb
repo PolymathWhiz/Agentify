@@ -5,7 +5,7 @@ class SearchController < ApplicationController
     agency = params[:agency_type]
     where = {}
     where[:agency_type] = agency unless !agency.present?
-    where[:activated] = params[:activated]
+    
     if search.present? && agency.present?
         @search = Business.search(search, order: [{business_name: {order: :asc }}],
                                           fields: [:business_name, :city, :state], misspellings: false, 
