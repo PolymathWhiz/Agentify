@@ -1,1 +1,3 @@
-$('select').select2(); // Country selector
+$(document).on('turbolinks:render', function() {
+    $('.sel').select2();
+});
