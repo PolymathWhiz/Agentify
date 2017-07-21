@@ -1,6 +1,6 @@
 <% provide(:title, "Search")%>
 
-<div class="container m-t-50" >
+<div class="container" >
   <div class="row">
     <div class="col-md-12">
       <ol class="breadcrumb">
@@ -11,7 +11,7 @@
   </div>
 
     <%= form_tag(search_index_path, :method => "get") do %>
-      <div class="row">
+      <div class="row m-t-14">
           <div class="col-md-3 m-r--10">
             <div class="form-group">
               <%= select_tag :agency_type, options_for_select(agency_type), class: "form-control" %>
@@ -34,10 +34,10 @@
       <span class="text-danger"> <%= @term %></span>
     </p>
 
-  <div class="row" style="margin-bottom: 40px;">
+  <div class="row m-t-20" style="margin-bottom: 40px;">
     <div class="col-md-8">
       <% @search.each do |f| %>
-        <div class="card">
+        <div class="card m-t-14">
           <div class="card-block">
             <h4 class="card-title"> <%= f.business_name %></h4>
             <h6 class="card-subtitle mb-2 text-muted"> <%= f.agency_type %></h6>
@@ -46,7 +46,7 @@
               <i class="fa fa-map-marker fa-fw" style="color: black;" aria-hidden="true"></i>
               <%= f.full_address %>
             </p>
-            <a href="<%= business_path(f) %>" class="card-link btn btn-success">View more</a>
+            <a href="<%= business_path(f) %>" class="card-link btn btn-success">View more information</a>
           </div>
         </div>
       <% end %>

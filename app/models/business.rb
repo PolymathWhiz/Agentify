@@ -5,16 +5,16 @@ class Business < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :business_name, :phno, :state, :city, :address,
+  validates_presence_of :business_name, :state, :city, :address,
                          :requester_name, :requester_email, :agency_type
 
   default_scope -> { order(business_name: :asc) }
-  
+
   EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # TODO Validate the various formats of inputs
   validates :business_name, uniqueness: {case_sensitive: false}
-  validates :business_website,    format: URI::regexp(%w(http https)), allow_blank: true
+  validates :business_website,    format: URI::regexp(%w(http https))
   validates :requester_email, format: { with: EMAIL_REGEX}
 
   searchkick word_middle: [:search_data]

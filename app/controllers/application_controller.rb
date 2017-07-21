@@ -8,8 +8,8 @@ before_action :configure_permitted_parameters, if: :devise_controller?
  	def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:business_name, :agency_type, :phno, :address,                                                                :city, :state, :business_website, :requester_name,                                                           :requester_email, :about, :avatar, :avatar_cache,                                                            :remove_avatar])
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :agency_type, :phno, :address, :city,
-    																										:state, :business_website, :requester_name, :requester_email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :agency_type, :address, :city,
+    																										:state, :requester_name, :requester_email])
   end
 
   def render_404
