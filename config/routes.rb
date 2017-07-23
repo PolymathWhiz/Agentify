@@ -9,13 +9,11 @@ Rails.application.routes.draw do
   
   devise_for :businesses
 
-  devise_scope :businesses do
-    resources :businesses, only: [:show, :update]
-  end
+  # Admin part 
+  devise_for :admins
 
-  # Admin section
   namespace :admin do
-    root 'home#index'
-    resources :businesses, only: [:index, :destroy]
+    resources :businesses, only: [:index, :update, :destroy]
   end
+  
 end
