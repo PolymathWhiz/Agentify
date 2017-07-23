@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   
   devise_for :businesses
 
-  # Admin part 
+  # Admin portal
   devise_for :admins
 
   namespace :admin do
     resources :businesses, only: [:index, :update, :destroy]
+
+    get '/home', to: 'home#index'
+    get '/requests', to: 'businesses#business_request'
   end
-  
+
 end

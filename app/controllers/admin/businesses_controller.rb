@@ -1,7 +1,6 @@
 class Admin::BusinessesController < Admin::BaseController
-  
-  def new
-    
+
+  def business_request
   end
 
   def update

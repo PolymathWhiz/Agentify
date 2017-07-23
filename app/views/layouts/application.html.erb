@@ -20,7 +20,12 @@
   </head>
 
   <body>
+  <% if !admin_signed_in? %>
     <%= render 'shared/navbar' %>
+  <% else %>
+    <%= render 'shared/admin_nav' %>
+  <% end %>
+    
 
     <%= render 'shared/devise_flash' %>
 

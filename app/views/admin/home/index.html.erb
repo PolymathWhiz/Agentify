@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-success">
+          <div class="rotate">
+            <i class="fa fa-briefcase fa-2x"></i>
+          </div>
+          <h6 class="text-uppercase">Activated Businesses</h6>
+          <h1 class="display-1">
+            <%= @activated_businesses %>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-danger">
+          <div class="rotate">
+            <i class="fa fa-briefcase fa-2x"></i>
+          </div>
+         <a href=""> <h6 class="text-uppercase">Unactivated Businesses</h6>
+          <h1 class="display-1">
+            <%= @unactivated_businesses %>
+          </h1>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-info">
+          <div class="rotate">
+            <i class="fa fa-user fa-2x"></i>
+          </div>
+          <h6 class="text-uppercase">Admins</h6>
+          <h1 class="display-1">
+            <%= @total_admins %>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-warning">
+          <div class="rotate">
+            <i class="fa fa-user fa-2x"></i>
+          </div>
+          <h6 class="text-uppercase">Admin Requests</h6>
+          <h1 class="display-1">
+            <%= @total_admin_requests %>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
