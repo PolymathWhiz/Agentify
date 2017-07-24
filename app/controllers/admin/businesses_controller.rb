@@ -3,6 +3,12 @@ class Admin::BusinessesController < Admin::BaseController
 
   def business_request
     @unactivated_businesses = Business.where(activated: false).page(params[:page]).per(30)
+    @count = @unactivated_businesses.count
+  end
+
+  def activated_business
+    @activated_businesses = Business.where(activated: true).page(params[:page]).per(30)
+    @count = @activated_businesses.count
   end
 
   def update

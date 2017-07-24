@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Business Requests</h1>
   <p class="lead">
-    There are <%= pluralize(@count, "business request") %> in total.
+    There are <%= pluralize(@count, "activated business") %> in total.
   </p>
   <div class="row">
     <div class="col-md-12">
@@ -15,11 +15,10 @@
             <th>Address</th>
             <th>Requester Name</th>
             <th>Email</th>
-            <th>Approve</th>
             <th>Delete</th>
           </tr>
         </thead>
-        <% @unactivated_businesses.each_with_index do |f, index| %>
+        <% @activated_businesses.each_with_index do |f, index| %>
         <% index += 1%>
         <tbody>
           <tr>
@@ -31,9 +30,6 @@
             <td> <%= f.requester_name %> </td>
             <td> <%= f.requester_email %> </td>
             <td>
-              <%= link_to 'Activate', admin_business_path(f), class: 'btn btn-success', method: :put %>
-            </td>
-            <td>
               <%= button_to 'Delete', admin_business_path(f), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure you want to delete this business request ?" } %>
             </td>
           </tr>
@@ -42,5 +38,5 @@
       </table>
     </div>
   </div>
-  <%= paginate @unactivated_businesses %>
+  <%= paginate @activated_businesses %>
 </div>
