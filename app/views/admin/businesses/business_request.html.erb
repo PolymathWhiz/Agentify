@@ -1,1 +1,44 @@
 <h1>This is business request</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-responsive">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Business</th>
+            <th>Email</th>
+            <th>Agency</th>
+            <th>Address</th>
+            <th>Requester Name</th>
+            <th>Email</th>
+            <th>Approve</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <% @unactivated_businesses.each_with_index do |f, index| %>
+        <% index += 1%>
+        <tbody>
+          <tr>
+            <th scope="row"> <%= index %></th>
+            <td><%= f.business_name %></td>
+            <td> <%= f.email %> </td>
+            <td> <%= f.agency_type %> </td>
+            <td> <%= business_address(f) %> </td>
+            <td> <%= f.requester_name %> </td>
+            <td> <%= f.requester_email %> </td>
+            <td>
+              <%= link_to 'Activate', admin_business_path(f), class: 'btn btn-success', method: :put %>
+            </td>
+            <td>
+              <%= button_to 'Delete', admin_business_path(f), class: "btn btn-danger waves-effect", method: :delete, data: { confirm: "Are you sure you want to delete this business request ?" } %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <%= paginate @unactivated_businesses %>
+</div>
