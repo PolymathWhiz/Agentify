@@ -14,9 +14,6 @@ gem 'devise'
 # Pagination
 gem 'kaminari'
 
-# Sweeter Alerts
-gem 'sweetalert2'
-
 # Generating fake data
 gem 'faker', '1.6.6'
 

@@ -28,10 +28,13 @@
                         </li>
                     <% else %>
                         <li class="nav-item">
-                            <a class="nav-link" href="<%= current_business %>">Profile</a>
+                            <a class="nav-link" href="<%= business_path(current_business) %>">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<%= edit_business_registration_path %>">Edit Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= destroy_business_session_path %>" data-method="delete" rel="nofollow" >Sign out </a>
                         </li>
                     <% end %>
                 </ul>

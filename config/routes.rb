@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   
   devise_for :businesses
 
+  devise_scope :businesses do
+    resources :businesses, only: [:show]    
+  end
+
   # Admin portal
   devise_for :admins
 
