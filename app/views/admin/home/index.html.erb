@@ -1,4 +1,5 @@
 <div class="container">
+<h1 class="lead">Admin Home Panel </h1>
   <div class="row">
     <div class="col-md-3">
       <div class="card card-inverse card-success">
@@ -61,4 +62,54 @@
     </div>
 
   </div>
+
+  <h2 class="lead m-t-14"> Business Statistics</h2>
+    <div class="row m-t-14">
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-success">
+          <div class="rotate">
+            <i class="fa fa-briefcase fa-2x"></i>
+          </div>
+          
+            <h6 class="text-uppercase">Travel Agents</h6>
+            <h1 class="display-1">
+              <%= @travel_agents %>
+            </h1>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-danger">
+          <div class="rotate">
+            <i class="fa fa-briefcase fa-2x"></i>
+          </div>
+            <h6 class="text-uppercase">Hostel Agents</h6>
+            <h1 class="display-1">
+              <%= @hostel_agents  %>
+            </h1>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-inverse card-success">
+        <div class="card-block bg-info">
+          <div class="rotate">
+            <i class="fa fa-briefcase fa-2x"></i>
+          </div>
+          <h6 class="text-uppercase">Real Estate Agents</h6>
+          <h1 class="display-1">
+            <%= @estate_agents  %>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>

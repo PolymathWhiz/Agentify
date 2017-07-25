@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Business Requests</h1>
+  <h1>Activated Businesses</h1>
   <p class="lead">
     There are <%= pluralize(@count, "activated business") %> in total.
   </p>
@@ -15,7 +15,7 @@
             <th>Address</th>
             <th>Requester Name</th>
             <th>Email</th>
-            <th>Delete</th>
+            <th>Status</th>
           </tr>
         </thead>
         <% @activated_businesses.each_with_index do |f, index| %>
@@ -30,7 +30,7 @@
             <td> <%= f.requester_name %> </td>
             <td> <%= f.requester_email %> </td>
             <td>
-              <%= button_to 'Delete', admin_business_path(f), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure you want to delete this business request ?" } %>
+              <button class="btn btn-primary">Verified</button>
             </td>
           </tr>
         </tbody>
