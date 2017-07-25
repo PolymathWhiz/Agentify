@@ -9,9 +9,6 @@ class Business < ApplicationRecord
   validates_presence_of :business_name, :state, :city, :address,
                          :requester_name, :requester_email, :agency_type
 
-  # default_scope -> { order(business_name: :asc) }
-  # default_scope { where(activated: true) }
-
   EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # TODO Validate the various formats of inputs

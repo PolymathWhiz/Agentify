@@ -26,9 +26,13 @@
     <%= render 'shared/admin_nav' %>
   <% end %>
     
-
-    <%= render 'shared/devise_flash' %>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'shared/devise_flash' %>
+        </div>
+      </div>
+    </div>
 		<%= yield %>
 
 		<%= render 'shared/footer' %>
