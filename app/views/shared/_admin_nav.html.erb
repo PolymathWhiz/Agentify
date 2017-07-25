@@ -19,10 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="<%= current_business %>">Profile</a>
+                            <a class="nav-link" href="<%= admin_home_path %>">Admin Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="<%= edit_business_registration_path %>">Edit Profile</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= destroy_admin_session_path %>" data-method="delete" rel="nofollow" >Sign out </a>
                         </li>
                 </ul>
             </div>
