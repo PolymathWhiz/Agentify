@@ -20,6 +20,9 @@ gem 'faker', '1.6.6'
 # Cool Urls
 gem 'friendly_id'
 
+# Bootsnap
+gem 'bootsnap', require: false
+
 # Image upload
 # gem 'carrierwave', '~> 1.0'
 # gem 'cloudinary'
