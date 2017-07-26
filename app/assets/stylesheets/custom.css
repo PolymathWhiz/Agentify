@@ -70,3 +70,16 @@ a:hover {
 .m-r--10 {
     margin-right: -10px;
 }
+
+
+/* FAQ */
+
+.question {
+    color: #0275d8;
+    font-size: 14px;
+}
+
+.answer {
+    font-size: 12.5px;
+    margin-top: -5px;
+}
