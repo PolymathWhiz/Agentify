@@ -39,10 +39,12 @@
           <div class="rotate">
             <i class="fa fa-user fa-2x"></i>
           </div>
-          <h6 class="text-uppercase">Admins</h6>
-          <h1 class="display-1">
-            <%= @total_admins %>
-          </h1>
+          <a href="<%= admin_admin_list_path %>">
+            <h6 class="text-uppercase">Admins</h6>
+            <h1 class="display-1">
+              <%= @total_admins %>
+            </h1>
+          </a>
         </div>
       </div>
     </div>

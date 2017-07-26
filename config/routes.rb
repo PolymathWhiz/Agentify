@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get '/home', to: 'home#index'
     get '/requests', to: 'businesses#business_request'
     get '/activated', to: 'businesses#activated_business'
+    get '/admin_list', to: 'access#index'
   end
 
 end
