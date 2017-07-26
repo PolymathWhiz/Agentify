@@ -1,6 +1,6 @@
 module BusinessRequestHelper
   def agency_type
-    ['Travel Agent', 'Hostel Agent', 'Real Estate Agent']
+    ['Travel Agent', 'Hostel Agent', 'Real Estate Agent', 'Car Agent']
   end
 
    def nigeria_states
