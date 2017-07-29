@@ -1,4 +1,4 @@
-class Admin::AccessController < Admin::BaseController
+class Admin::AdminController < Admin::BaseController
   before_action :set_admin, only: [:destroy]
 
   def index
@@ -12,17 +12,17 @@ class Admin::AccessController < Admin::BaseController
 
   def destroy
     if @admin.destroy
-      flash[:success] = "Successfully deleted business"
-      redirect_to admin_requests_path
+      flash[:success] = "Successfully deleted admin."
+      redirect_to admin_home_path
     else 
-      flash[:warning] = "Problem encountered while deleting the current business."
+      flash[:warning] = "Problem encountered while deleting the current admin."
     end
   end
 
   private
 
     def set_admin
-      @admin = Admin.friendly.find(params[:id])
+      @admin = Admin.find(params[:id])
     end
   
 end
