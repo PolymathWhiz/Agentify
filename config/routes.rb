@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :businesses, only: [:index, :update, :destroy]
+    resources :admin, only: [:destroy]
 
     get '/home', to: 'home#index'
     get '/requests', to: 'businesses#business_request'
