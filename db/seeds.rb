@@ -7,15 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create!(email: "anyanwumiracle78@gmail.com",
-             password: "m123456",
+             password: "theinvisible1",
              admin: true,     
-             created_at: Time.zone.now,    
-             activated_at: Time.zone.now
+             created_at: Time.zone.now
              )
 
 Admin.create!(email: "mailcoja@gmail.com",
-             password: "m123456",
+             password: "cojarepublic",
              admin: false,     
-             created_at: Time.zone.now,    
-             activated_at: Time.zone.now
+             created_at: Time.zone.now
              )
