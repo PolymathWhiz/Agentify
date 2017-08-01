@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.0'
+ruby '2.4.1'
 
 # Search
 gem 'searchkick'
@@ -23,7 +23,7 @@ gem 'faker', '1.6.6'
 gem 'friendly_id'
 
 # Bootsnap
-gem 'bootsnap', require: false
+# gem 'bootsnap', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
