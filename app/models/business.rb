@@ -16,7 +16,7 @@ class Business < ApplicationRecord
   validates :business_website,    format: URI::regexp(%w(http https)), allow_blank: true
   validates :requester_email, format: { with: EMAIL_REGEX}
 
-  searchkick word_middle: [:search_data]
+  searchkick #word_middle: [:search_data]
 
   extend FriendlyId
   friendly_id :business_name, use: :slugged
