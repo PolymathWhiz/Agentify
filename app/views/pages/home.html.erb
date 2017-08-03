@@ -10,16 +10,16 @@
              <div class="offset-md-1"></div>
                 <div class="col-md-2 m-r--10">
                      <div class="form-group">
-                        <%#= select_tag :agency_type, options_for_select(agency_type), class: "form-control form-control-lg" %>
+                        <%= select_tag :agency_type, options_for_select(agency_type), class: "form-control form-control-lg" %>
                     </div>
                 </div>
                 <div class="col-md-6 m-r--10">
                     <div class="form-group">
-                        <%#= text_field_tag :search, params[:search], class: "form-control form-control-lg", placeholder: "Enter agent name or location", maxlength: 30 %>
+                        <%= text_field_tag :search, params[:search], class: "form-control form-control-lg", placeholder: "Enter agent name or location", maxlength: 30 %>
                      </div>
                 </div>
                 <div class="col-md-3">
-                    <%#= submit_tag "Find Agents", name: nil, class: "btn btn-outline-primary btn-block btn-lg" %>
+                    <%= submit_tag "Find Agents", name: nil, class: "btn btn-outline-primary btn-block btn-lg" %>
                  </div>
              </div>
             <% end %>
