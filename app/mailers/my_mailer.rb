@@ -4,7 +4,7 @@ class MyMailer < Devise::Mailer
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
 
   def confirmation_instructions(record, token, opts={})
-    headers["Custom-header"] = "Agentify"
+    headers["display_name"] = "Agentify"
     super
   end
 
