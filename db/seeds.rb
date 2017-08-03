@@ -15,9 +15,3 @@ Admin.create!(email: "nonsononi100@gmail.com",
              admin: false,     
              created_at: Time.zone.now
              )
-
-Admin.create!(email: "mailcoja@gmail.com",
-             password: "cojarepublic",
-             admin: false,     
-             created_at: Time.zone.now
-             )
