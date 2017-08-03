@@ -16,7 +16,7 @@ class Business < ApplicationRecord
   validates :business_website,    format: URI::regexp(%w(http https)), allow_blank: true
   validates :requester_email, format: { with: EMAIL_REGEX}
 
-  searchkick #word_middle: [:search_data]
+  searchkick word_start: [:search_data]
 
   extend FriendlyId
   friendly_id :business_name, use: :slugged
@@ -40,15 +40,6 @@ class Business < ApplicationRecord
     "#{address}, #{city}, #{state}."
   end
 
-  private 
-
-  def normalize_fields
-    self.requester_email = requester_email.downcase unless requester_email.blank?
-    self.requester_name = requester_name.titleize unless requester_name.blank?
-    self.business_name = business_name.titleize unless business_name.blank?
-    self.business_website = business_website.downcase unless business_website.blank?
-    address.capitalize! unless address.blank?
-  end
 
   # Search params used
   # by searchkick gem
@@ -60,6 +51,16 @@ class Business < ApplicationRecord
       agency_type: agency_type,
       activated: activated 
     }
+  end
+
+  private 
+
+  def normalize_fields
+    self.requester_email = requester_email.downcase unless requester_email.blank?
+    self.requester_name = requester_name.titleize unless requester_name.blank?
+    self.business_name = business_name.titleize unless business_name.blank?
+    self.business_website = business_website.downcase unless business_website.blank?
+    address.capitalize! unless address.blank?
   end
 
   def should_generate_new_friendly_id?

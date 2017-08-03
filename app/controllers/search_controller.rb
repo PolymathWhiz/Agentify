@@ -8,7 +8,7 @@ class SearchController < ApplicationController
     
     if search.present? && agency.present?
         @search = Business.search(search, order: [{business_name: {order: :asc }}],
-                                          fields: [:business_name, :city, :state], misspellings: false, 
+                                          fields: [ {business_name: :word_start}, {city: :word_start}, {state: :word_start}], misspellings: false, 
                                           where: {activated: true, agency_type: where[:agency_type] } )
     else
        @search = Business.search("*", order: [{business_name: {order: :asc }}], 
