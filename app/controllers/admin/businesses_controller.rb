@@ -12,7 +12,6 @@ class Admin::BusinessesController < Admin::BaseController
   end
 
   def update
-    # TODO toggle the activated status for businesses 
     @business.toggle(:activated)
     if @business.save
       flash[:success] = "Successfully activated #{@business.business_name}'s business."
