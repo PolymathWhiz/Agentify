@@ -7,13 +7,14 @@ class Business < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :business_name, :state, :city, :address,
-                         :requester_name, :requester_email, :agency_type
+                         :requester_name, :requester_email, :agency_type,
+                         :registration_number
 
   EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # TODO Validate the various formats of inputs
-  validates :business_name, uniqueness: {case_sensitive: false}
   validates :business_website,    format: URI::regexp(%w(http https)), allow_blank: true
+  validates :registration_number, uniqueness: true
   validates :requester_email, format: { with: EMAIL_REGEX}
 
   searchkick word_start: [:business_name, :city, :state]
@@ -52,6 +53,7 @@ class Business < ApplicationRecord
     self.business_name = business_name.titleize unless business_name.blank?
     self.business_website = business_website.downcase unless business_website.blank?
     address.capitalize! unless address.blank?
+
   end
 
   def should_generate_new_friendly_id?

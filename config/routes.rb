@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
   get '/terms', to: 'pages#terms'
+  get '/privacy', to: 'pages#privacy'
   
   devise_for :businesses
 

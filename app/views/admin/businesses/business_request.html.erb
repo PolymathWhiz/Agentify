@@ -17,8 +17,9 @@
             <th>Address</th>
             <th>Requester Name</th>
             <th>Email</th>
+            <th>Registration Number</th>
             <th>Approve</th>
-            <th>Delete</th>
+            <th>Decline</th>
           </tr>
         </thead>
         <% @unactivated_businesses.each_with_index do |f, index| %>
@@ -32,6 +33,7 @@
             <td> <%= business_address(f) %> </td>
             <td> <%= f.requester_name %> </td>
             <td> <%= f.requester_email %> </td>
+            <td> <%= f.registration_number %> </td>
             <td>
               <%= link_to 'Activate', admin_business_path(f), class: 'btn btn-success', method: :put %>
             </td>
