@@ -71,6 +71,18 @@ a:hover {
     margin-right: -10px;
 }
 
+.m-t--15 {
+    margin-top: -15px;
+}
+
+
+/* Nav */
+
+.logo {
+    color: #346DAF !important;
+    font-size: 23px;
+}
+
 
 /* FAQ */
 

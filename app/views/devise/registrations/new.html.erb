@@ -38,6 +38,11 @@
               <%= f.label :business_registration_number %>
               <%= f.text_field :registration_number, class: 'form-control' %>
             </div>
+
+            <div class="form-group">
+              <%= f.label :phone_numbers %>
+              <%= f.telephone_field :phno, autofocus: false, class: 'form-control' %>
+            </div>
             
             <div class="form-group">
                 <%= f.label :password %>

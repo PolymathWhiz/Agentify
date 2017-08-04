@@ -15,7 +15,7 @@ class Admin::BusinessesController < Admin::BaseController
     @business.toggle(:activated)
     if @business.save
       flash[:success] = "Successfully activated #{@business.business_name}'s business."
-      # TODO send mail to business to notify it has been added
+      AdminMailer.welcome_email(@business).deliver_later
       redirect_to admin_requests_path
     else
       flash[:danger] = "Unable to activate #{@business.business_name}'s business."

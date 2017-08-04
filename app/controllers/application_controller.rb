@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
  	  def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:account_update, keys: [:business_name, :agency_type, :phno, :address,                                                          :city, :state, :business_website,                                                                       :requester_name, :requester_email, :about])
 
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :agency_type, :registration_number,                                                      :address, :city, :state, :requester_name, :requester_email])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :agency_type, :phno,                                                                    :registration_number, :address, :city, :state,                                                          :requester_name, :requester_email])
     end
 
   def render_404
