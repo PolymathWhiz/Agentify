@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: '"Agentify" <support@agentify.org>'
+  default from: '"Agentify Team" <support@agentify.org>'
  
   def welcome_email(business)
     @business = business
