@@ -3,7 +3,7 @@ class Admin::AdminController < Admin::BaseController
 
   def index
     @admins = Admin.where.not(id: current_admin.id).page(params[:page]).per(30)
-    @count = Admin.where(admin: true).count
+    @count = Admin.all.count
   end
 
   def admin_requests

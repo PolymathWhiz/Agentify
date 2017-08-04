@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'search/index'
 
   root 'pages#home'
   
@@ -7,6 +6,8 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/terms', to: 'pages#terms'
   get '/privacy', to: 'pages#privacy'
+
+  resources :search, only: :index
   
   devise_for :businesses
 
