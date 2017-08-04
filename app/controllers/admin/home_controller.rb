@@ -7,8 +7,7 @@ class Admin::HomeController < Admin::BaseController
     @estate_agents = Business.where("Agency_type = ? AND activated = ?", "Real Estate Agent", true).count
     @hostel_agents = Business.where("Agency_type = ? AND activated = ?", "Hostel Agent", true).count
     @car_agents = Business.where("Agency_type = ? AND activated = ?", "Car Agent", true).count
-    @total_admins = Admin.where(admin: true).count 
-    @total_admin_requests = Admin.where(admin: false).count
+    @total_admins = Admin.all.count
   end
   
 end
