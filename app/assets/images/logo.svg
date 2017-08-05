@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="89px" viewBox="0 0 108 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>Mobile Portrait</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Mobile-Portrait" sketch:type="MSArtboardGroup">
+            <rect id="Rectangle-1" stroke="#0275D8" fill="#0275D8" sketch:type="MSShapeGroup" x="1" y="-3" width="108" height="92" rx="8"></rect>
+            <text id="A" sketch:type="MSTextLayer" font-family="Chalkboard" font-size="48" font-weight="normal" fill="#FFFFFF">
+                <tspan x="37" y="55">A</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
