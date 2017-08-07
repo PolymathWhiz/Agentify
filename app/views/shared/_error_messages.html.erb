@@ -3,7 +3,7 @@
     <div id="error_explanation">
 
       <div class="animated shake alert alert-danger" role="alert">
-         <span style="font-size: 15px;"> <%= pluralize(object.errors.count, "error") %> prevented your request being sent. </span>
+         <span style="font-size: 15px;"> <%= pluralize(object.errors.count, "error") %> prevented your request from being sent. </span>
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <ul>
           <% object.errors.full_messages.each do |msg| %>
