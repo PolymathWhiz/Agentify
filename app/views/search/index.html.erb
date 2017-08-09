@@ -54,6 +54,7 @@
   </div>
   <% else %>
     <h2 class="text-center text-danger m-t-100 m-b-100">No results found</h2>
+    <p class="text-center m-b-100">Know an agent in your area? <%= link_to 'List the agency', new_business_registration_path %> or <a href="mailto:support@agentify.org">Contact us</a></p>
   <% end %>
   <%= paginate @search %>
 </div>
