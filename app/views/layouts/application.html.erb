@@ -13,17 +13,17 @@
   <% else %>
     <%= render 'shared/admin_nav' %>
   <% end %>
-    
+
     <div class="row m-t--15">
       <div class="col-md-12">
-        <%= render 'shared/devise_flash' %>  
+        <%= render 'shared/devise_flash' %>
       </div>
     </div>
 
 		<%= yield %>
 
 		<%= render 'shared/footer' %>
-  
+
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval' => false %>
     <%= render 'shared/footer_addons'%>
   </body>

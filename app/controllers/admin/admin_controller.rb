@@ -14,7 +14,7 @@ class Admin::AdminController < Admin::BaseController
     if @admin.destroy
       flash[:success] = "Successfully deleted admin."
       redirect_to admin_home_path
-    else 
+    else
       flash[:warning] = "Problem encountered while deleting the current admin."
     end
   end
@@ -24,5 +24,5 @@ class Admin::AdminController < Admin::BaseController
     def set_admin
       @admin = Admin.find(params[:id])
     end
-  
+
 end
